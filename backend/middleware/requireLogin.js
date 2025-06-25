@@ -30,6 +30,7 @@ module.exports = (req, res, next) =>{
             .then(savedUser=>{
                 // console.log("middleware: ", savedUser)
 
+                
                 req.user = savedUser
                 next()
             })

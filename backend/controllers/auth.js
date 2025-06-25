@@ -62,7 +62,6 @@ router.post("/signin", (req, res) =>{
 
 })
 
-
 router.get("/protected", requireLogin, (req, res)=>{
     res.status(200).json({msg: "Access granted!!"})
 })

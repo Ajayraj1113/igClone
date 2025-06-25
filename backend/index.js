@@ -3,10 +3,17 @@ const { default: mongoose } = require("mongoose")
 const { MONGOURI } = require("./keys")
 const app = express()
 
-app.use(express.json())
+function middlewares(req, res, next){
+    console.log("hi from middleware")
+    next()
+}
+
+// app.use(middlewares)
+
+app.use(express.json())   
 app.use(express.urlencoded({extended: true}))
 
-app.get("/api/health", (req, res)=>{
+app.get("/api/health",middlewares, (req, res)=>{
     res.send({msg: "Everthing is Ok!!"})
 })
 
