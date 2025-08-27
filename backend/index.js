@@ -23,6 +23,7 @@ mongoose.connect(MONGOURI)
 
 app.use(require("./controllers/auth"))
 app.use(require("./controllers/post"))
+app.use(require("./controllers/user"))
 
 
 
